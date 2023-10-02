@@ -1,0 +1,49 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #Please run in ash :pip install numpy\
+\
+\
+import numpy as np\
+\
+# Data\
+data = [\
+    11, 12, 13, 13, 13, 13, 13, 13, 14, 14, 14, 14,\
+    14, 14, 14, 14, 14, 14, 14, 15, 15, 15, 15, 15,\
+    15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15,\
+    15, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,\
+    16, 16, 16, 16, 16, 16, 17, 17, 17, 17, 17, 17,\
+    17, 17, 17, 17, 17, 17, 17, 17, 18, 18, 18, 18,\
+    18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18,\
+    19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19,\
+    19, 19, 19, 19, 19, 19, 20, 20, 20, 20, 20, 20,\
+    20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20,\
+    20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 21, 21,\
+    21, 21, 21, 21, 21, 21, 21, 21, 24, 24, 24, 24,\
+    24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24,\
+    24, 24, 24, 24, 24, 24, 25, 25, 25, 25, 25, 25,\
+    25, 25, 25, 25, 25, 25, 25, 25, 26, 26, 26, 26,\
+    26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 27, 27,\
+    27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27,\
+    29, 30, 31, 34, 36, 39, 43, 46, 50, 54, 59, 67\
+]\
+\
+# Calculate statistics\
+median = np.median(data)\
+mode = max(set(data), key=data.count)  # Mode calculation without scipy\
+q1 = np.percentile(data, 25)\
+q3 = np.percentile(data, 75)\
+p10 = np.percentile(data, 10)\
+p95 = np.percentile(data, 95)\
+\
+# Print results\
+print("Median:", median)\
+print("Mode:", mode)\
+print("Q1 (25th percentile):", q1)\
+print("Q3 (75th percentile):", q3)\
+print("P10 (10th percentile):", p10)\
+print("P95 (95th percentile):", p95)}
